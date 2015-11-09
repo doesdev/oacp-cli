@@ -1,0 +1,23 @@
+{
+  "name": "oacp-cli",
+  "version": "1.0.0",
+  "description": "Command line generator for OACP APIs",
+  "readme": "https://github.com/musocrat/oacp-cli/blob/master/README.md",
+  "main": "bin/oacp.js",
+  "bin": {
+    "oacp" : "./bin/oacp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musocrat/oacp-cli.git"
+  },
+  "author": "Andrew Carpenter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/musocrat/oacp-cli/issues"
+  },
+  "homepage": "https://github.com/musocrat/oacp-cli#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
