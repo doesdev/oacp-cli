@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Command line generator for OACP APIs",
   "readme": "https://github.com/musocrat/oacp-cli/blob/master/README.md",
-  "main": "bin/oacp.js",
+  "main": "index.js",
   "bin": {
-    "oacp" : "./bin/oacp.js"
+    "oacp": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/musocrat/oacp-cli#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "keypair": "^1.0.0"
   }
 }
