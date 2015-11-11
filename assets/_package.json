@@ -3,7 +3,7 @@
   "oacp": {
     "env": {},
     "namespace": "{{namespace}}",
-    "access": "lib/access.js",
+    "access": "helpers/access.js",
     "jwt": {
       "privKeyPath": "config/{{namespace}}.priv",
       "pubKeyPath": "config/{{namespace}}.pub",
