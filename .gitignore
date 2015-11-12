@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Pg function directory
+out/
+
 # Misc
 info.txt
 
