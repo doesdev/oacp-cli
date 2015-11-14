@@ -27,7 +27,7 @@ function named (opts) {
 // CLI application
 cli.version(info.version)
   // Command: [new] New OACP API
-  .command('new [apiName] [resourceNames...]')
+  .command('new [name] [resources...]')
   .description('Create new OACP API, scaffold out each resource by name')
   .option('-i, --interactive', 'Create API interactively')
   .option('-d, --dir <apiDir>', 'API directory')
@@ -38,13 +38,18 @@ cli.version(info.version)
   )
   .action(newApi)
 
+cli
+  .command('pgfuncs [resources...]')
+  .description('Generate PG functions for each resource')
+  .action((resources) => console.log('hep', resources))
+
 // Initialize CLI
 cli.parse(process.argv)
 
 // Initialize our new API
-function newApi (apiName, resourceNames, options) {
+function newApi (apiName, resources, options) {
   var name = apiName || options.name
-  var scaffold = resourceNames || options.scaffold
+  var scaffold = resources || options.scaffold
   name = (typeof name === 'function') ? null : name
   scaffold = (typeof scaffold === 'function') ? null : scaffold
   var opts = {
