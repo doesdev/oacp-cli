@@ -41,6 +41,12 @@ cli.version(info.version)
 
 cli
   .command('pgfuncs [resources...]')
+  .alias('pgfunc')
+  .alias('pg-func')
+  .alias('pg-funcs')
+  .alias('pgFuncs')
+  .alias('funcGen')
+  .alias('funcgen')
   .description('Generate PG functions for each resource')
   .option('-s, --schema <name>', 'DB schema to use')
   .action(pgFuncs)
