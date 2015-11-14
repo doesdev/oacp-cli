@@ -13,6 +13,7 @@ const info = require('./package.json')
 const prompt = require('./lib/prompt')
 const file_writer = require('./lib/file_writer')
 const keygen = require('./lib/keygen')
+const pgFuncs = require('./lib/pg_funcs')
 
 // Helpers
 const toArray = (str) => (str.split(',').map((e) => e.trim()))
@@ -41,7 +42,8 @@ cli.version(info.version)
 cli
   .command('pgfuncs [resources...]')
   .description('Generate PG functions for each resource')
-  .action((resources) => console.log('hep', resources))
+  .option('-s, --schema <name>', 'DB schema to use')
+  .action(pgFuncs)
 
 // Initialize CLI
 cli.parse(process.argv)
