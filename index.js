@@ -14,6 +14,7 @@ const prompt = require('./lib/prompt')
 const file_writer = require('./lib/file_writer')
 const keygen = require('./lib/keygen')
 const pgFuncs = require('./lib/pg_funcs')
+const commitPgFuncs = require('./lib/commit_pg_funcs')
 
 // Helpers
 const toArray = (str) => (str.split(',').map((e) => e.trim()))
@@ -50,6 +51,19 @@ cli
   .description('Generate PG functions for each resource')
   .option('-s, --schema <name>', 'DB schema to use')
   .action(pgFuncs)
+
+cli
+  .command('commit-pgfuncs')
+  .alias('commitpgfuncs')
+  .alias('commit-funcs')
+  .alias('commitPgFuncs')
+  .alias('migrate-pgfuncs')
+  .alias('migrate-funcs')
+  .alias('migrateFuncs')
+  .alias('migratefuncs')
+  .description('Commit previously generated PG functions')
+  .option('-s, --schema <name>', 'DB schema to use')
+  .action(commitPgFuncs)
 
 // Initialize CLI
 cli.parse(process.argv)
